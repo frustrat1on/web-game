@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>끝말잇기</title>
+  <style>
+    .centered {
+      text-align: center;
+    }
+    .delunderbar{
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body style="background-image: url(https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-042.jpg);">
+  
+  <div class="centered">
+    <img src="https://media1.tenor.com/m/iDTA6WZvclAAAAAd/information-you-should-relay-jacob-mvpr.gif" class="center">
+  
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어: <span id="word"></span></div>
+    <input type="text">
+    <button>입력</button>
+    <button><a href="" class="delunderbar">리셋</a></button>
+    <button><a href="https://ko.dict.naver.com/#/main" target="_blank" class="delunderbar">사전</a></button>
+    
+  </div>
+  <div style="background-image: url(https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg);">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ              -금지단어 리스트-<br>
+    가 - 그릇,기쁨, 구름, 기름, 고드름 ,기름값, 고려, 고구려, 기력<br>
+    나 - 나트륨,네티켓 , 노력, 서녘, ,남녘,<br>
+    다 - 독버섯,뚜껑, 디귿, 당뇨, 동녘<br>
+    라 - 류머티즘, 로켓, 리본매듭, 리듬,로봇<br>
+    마 - 무늬, ,무릎,매듭, 마그네슘, 마끼야또<br>
+    바 - 발뺌, 버섯, ,버릇, 부엌,비료,비듬,비스켓(비스킷),별무늬 ,밥그릇 반비례, 비례 ,반지름
+    ,볼륨, 북녘<br>
+    사 - 수산화나트륨, 스포츠, 살갗, 산기슭(슭곰발→발뺌), 식용버섯(유용함), 사기그릇, , 술
+    버릇, 새벽녘, 사료, 스트론튬, 소켓, 수탉 ,습득 ,씨름,씨앗 ,속력, 세슘(→슘페터→터븀) 시
+    뮬레이션<br>
+    아 - 이리듐, 어뢰, ,이쁨,우라늄,알루미늄,에티켓 ,이산화티타늄 ,암탉 ,아빠 ,아세트산칼슘 ,
+    음이름<br>
+  </div>
+
+  <script>
+    const number = Number(prompt('몇 명이 참가하나요?'));
+    const $button = document.querySelector('button');
+    const $input = document.querySelector('input');
+    const $word = document.querySelector('#word');
+    const $order = document.querySelector('#order');
+    var score;
+    
+    let word;
+    let newWord;
+
+    
+
+    const onClickButton = () => {
+      if (!word || word[word.length - 1] === newWord[0]) {
+
+        word = newWord;
+        $word.textContent = word;
+        const order = Number($order.textContent);
+        if (order + 1 > number) {
+          $order.textContent = 1;
+        } else {
+          $order.textContent = order + 1;
+        }
+      } else {
+        alert('올바르지 않은 단어입니다!');
+      }
+      $input.value = '';
+      $input.focus();
+    };
+    const onInput = (event) => {
+      newWord = event.target.value;
+    };
+
+    $button.addEventListener('click', onClickButton);
+    $input.addEventListener('input', onInput);
+  </script>
+</body>
+
+</html>
