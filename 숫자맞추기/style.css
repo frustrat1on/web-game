@@ -1,0 +1,15 @@
+.text-center{
+    text-align: center;
+}
+.w{
+    width: 498px;
+    height: 498px;
+}
+.bg-color{
+    background-color: cornsilk;
+}
+.button-radious{
+    border-radius: 500px;
+    border: none;
+    padding: 5px 30px;
+}
